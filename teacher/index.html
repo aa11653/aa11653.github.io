@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>教师节小诗生成器</title>
+    </head>
+    <body>
+        <h1>教师节小诗生成器</h1>
+        <p>刷新一下就会有小诗生成</p>
+        <hr />
+        <script src="main.js"></script>
+        <script>
+            const p = document.createElement("p");
+            p.innerText = generate();
+            document.body.appendChild(p);
+        </script>
+    </body>
+</html>
