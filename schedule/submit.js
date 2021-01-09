@@ -4,6 +4,11 @@ const subjectNames = ["语文", "数学", "英语", "政治", "历史", "地理"
 
 $submit.addEventListener("click", function () {
   const classSelected = selectors.map(s => s.value);
+  const classFiltered = classSelected.filter(s => s !== "-")
+  if (classFiltered.length !== 6) {
+    alert(`您一定就是7选${classFiltered.length - 3}选手吧！`);
+    return;
+  }
   /**
    * 学生行政班级
    */
@@ -29,11 +34,6 @@ $submit.addEventListener("click", function () {
       selectedSubjectData[subjectNames[11]] = { className, init: false }
     }
   })
-
-  // if (classSelected.filter(c => c !== "-").length !== 6) {
-  //   alert(`您一定就是7选${classFiltered.length - 3}选手吧！`);
-  //   return;
-  // }
 
   document.body.innerHTML = `<table cellspacing="0" border="1"><tbody>${`<tr>${"<td></td>".repeat(9)}</tr>`.repeat(8)}</tbody></table>`
   const $table = document.querySelector("table")
